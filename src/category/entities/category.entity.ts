@@ -1,4 +1,11 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  DeleteDateColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
 @Entity()
 export class Category {
@@ -6,11 +13,20 @@ export class Category {
   id: number;
 
   @Column()
-  firstName: string;
+  name: string;
 
   @Column()
-  lastName: string;
+  code: string;
 
   @Column({ default: true })
-  isActive: boolean;
+  is_active: boolean;
+
+  @CreateDateColumn()
+  created_at!: Date;
+
+  @UpdateDateColumn()
+  updated_at!: Date;
+
+  @DeleteDateColumn()
+  deleted_at?: Date;
 }
