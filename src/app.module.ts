@@ -1,9 +1,12 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { CategoryModule } from './category/category.module';
 
 @Module({
-  imports: [],
+  //Static glob paths (e.g., dist/**/*.entity{ .ts,.js}) won't work properly with webpack.
+  imports: [TypeOrmModule.forRoot(), CategoryModule],
   controllers: [AppController],
   providers: [AppService],
 })
