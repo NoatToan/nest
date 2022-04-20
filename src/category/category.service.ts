@@ -15,7 +15,7 @@ export class CategoryService {
     private categroryRepository: Repository<Category>,
   ) {}
   create(createCategoryDto: CreateCategoryDto) {
-    return this.categroryRepository.create(createCategoryDto);
+    return this.categroryRepository.save(createCategoryDto);
   }
 
   paginate(query: PaginateQuery): any {
