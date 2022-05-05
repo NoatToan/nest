@@ -7,19 +7,19 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-@Entity()
+@Entity({name: 'categories'})
 export class Category {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
-  name: string;
+  description: string;
 
   @Column()
   code: string;
 
-  @Column({ default: true })
-  is_active: boolean;
+  @Column()
+  name: string;
 
   @CreateDateColumn()
   created_at!: Date;

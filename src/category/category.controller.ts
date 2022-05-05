@@ -6,14 +6,14 @@ import {
   Patch,
   Param,
   Delete,
+  Logger,
+  Catch,
 } from '@nestjs/common';
-import { IsNumberString } from 'class-validator';
 import { Paginate, PaginateQuery } from 'nestjs-paginate';
 import { Observable } from 'rxjs';
 import { CategoryService } from './category.service';
 import { CreateCategoryDto } from './dto/create-category.dto';
 import { UpdateCategoryDto } from './dto/update-category.dto';
-import { Category } from './entities/category.entity';
 
 @Controller('category')
 export class CategoryController {
